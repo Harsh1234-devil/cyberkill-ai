@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  cyberkill-server:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: cyberkill-ai
+    restart: unless-stopped
+    ports:
+      - "8888:8888"
+    environment:
+      - CYBERKILL_DEBUG=false
+      - CYBERKILL_STRICT_SCOPE=true
+    volumes:
+      - ./data:/app/data
+      - ./reports:/app/reports
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8888/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

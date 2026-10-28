@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "cyberkill-ai": {
+      "command": "python3",
+      "args": [
+        "-m",
+        "cyberkill.mcp_server"
+      ],
+      "env": {
+        "PYTHONPATH": "src"
+      },
+      "description": "Cyberkill.ai v1.0.0 - Autonomous Multi-Agent Cybersecurity & Kill Chain Framework by Harsh Vardhan",
+      "timeout": 300,
+      "disabled": false
+    }
+  }
+}
